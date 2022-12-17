@@ -2,7 +2,9 @@ packages:
   - app-admin/sudo
   - app-portage/cpuid2cpuflags
   - app-portage/gentoolkit
+  - net-firewall/firewalld
   - net-misc/chrony
+  - net-misc/networkmanager
   - sys-boot/grub
   - sys-firmware/intel-microcode
   - sys-kernel/gentoo-kernel-bin

@@ -1,2 +1,5 @@
 services:
+  - NetworkManager
   - chronyd
+  - firewalld
+  - iwd

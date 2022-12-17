@@ -1,0 +1,9 @@
+- include_vars: "{{ ansible_service_mgr }}.yml"
+
+- lineinfile:
+    path: "{{ item.path }}"
+    line: "{{ item.line }}"
+    create: true
+  with_items: [ "{{ etc_lines }}" ]
+  become: true
+

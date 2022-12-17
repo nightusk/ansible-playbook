@@ -1,0 +1,11 @@
+- include_vars: "{{ ansible_distribution }}.yml"
+
+- package:
+    name: "{{ item }}"
+  with_items: [ "{{ packages }}" ]
+  become: true
+  ignore_errors: true
+
+- make:
+    chdir: "{{ role_path }}/vars"
+    target: "{{ ansible_distribution }}.yml"

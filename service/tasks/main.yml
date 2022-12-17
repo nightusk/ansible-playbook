@@ -1,0 +1,7 @@
+- include_vars: "{{ ansible_service_mgr }}.yml"
+
+- service:
+    name: "{{ item }}"
+    enabled: true
+  with_items: [ "{{ services }}" ]
+  become: true

@@ -1,0 +1,10 @@
+packages:
+  - app-admin/sudo
+  - app-portage/cpuid2cpuflags
+  - app-portage/gentoolkit
+  - net-misc/chrony
+  - sys-boot/grub
+  - sys-firmware/intel-microcode
+  - sys-kernel/gentoo-kernel-bin
+  - sys-kernel/installkernel-gentoo
+  - sys-kernel/linux-firmware

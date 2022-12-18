@@ -3,6 +3,7 @@ etc_lines:
   - { path: /etc/conf.d/display-manager, line: DISPLAYMANAGER=greetd}
   - { path: /etc/greetd/environments, line: bash }
   - { path: /etc/greetd/environments, line: sway }
+  - { path: /etc/greetd/environments, line: wayfire }
   - { path: /etc/greetd/sway-config, line: exec "gtkgreet -l; swaymsg exit" }
   - { path: /etc/greetd/sway-config, line: input "1:1:AT_Translated_Set_2_keyboard" xkb_layout "jp" }
   - { path: /etc/greetd/sway-config, line: input type:touchpad tap enabled }

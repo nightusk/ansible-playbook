@@ -5,8 +5,11 @@ packages:
   - app-portage/gentoolkit
   - gui-apps/foot
   - gui-apps/gtkgreet
+  - gui-apps/wcm
+  - gui-apps/wf-shell
   - gui-libs/display-manager-init
   - gui-wm/sway
+  - gui-wm/wayfire
   - net-firewall/firewalld
   - net-misc/chrony
   - net-misc/networkmanager

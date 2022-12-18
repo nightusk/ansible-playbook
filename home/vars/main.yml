@@ -1,3 +1,4 @@
 config:
   - alacritty
   - sway
+  - wayfire.ini

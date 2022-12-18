@@ -3,6 +3,8 @@ packages:
   - app-office/libreoffice-bin
   - app-portage/cpuid2cpuflags
   - app-portage/gentoolkit
+  - dev-util/github-cli
+  - dev-vcs/git
   - gui-apps/foot
   - gui-apps/gtkgreet
   - gui-apps/wcm

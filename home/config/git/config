@@ -1,0 +1,4 @@
+[include]
+	path = user
+[core]
+	editor = vim

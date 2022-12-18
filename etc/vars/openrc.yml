@@ -1,4 +1,12 @@
 etc_lines:
+  - { path: /etc/conf.d/display-manager, line: CHECKVT=7}
+  - { path: /etc/conf.d/display-manager, line: DISPLAYMANAGER=greetd}
+  - { path: /etc/greetd/environments, line: bash }
+  - { path: /etc/greetd/environments, line: sway }
+  - { path: /etc/greetd/sway-config, line: exec "gtkgreet -l; swaymsg exit" }
+  - { path: /etc/greetd/sway-config, line: input "1:1:AT_Translated_Set_2_keyboard" xkb_layout "jp" }
+  - { path: /etc/greetd/sway-config, line: input type:touchpad tap enabled }
+  - { path: /etc/greetd/sway-config, line: include /etc/sway/config.d/* }
   - { path: /etc/portage/package.license/ansible, line: sys-firmware/intel-microcode intel-ucode }
   - { path: /etc/portage/package.license/ansible, line: sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE }
   - { path: /etc/portage/package.use/ansible, line: net-misc/networkmanager iwd }
@@ -7,3 +15,6 @@ etc_lines:
 etc_inis:
   - { path: /etc/NetworkManager/conf.d/nm.conf, section: device, option: wifi.backend, value: iwd }
   - { path: /etc/NetworkManager/conf.d/nm.conf, section: device, option: wifi.iwd.autoconnect, value: "yes" }
+  - { path: /etc/greetd/config.toml, section: default_session, option: command, value: sway --config /etc/greetd/sway-config }
+  - { path: /etc/greetd/config.toml, section: default_session, option: user, value: greetd }
+  - { path: /etc/greetd/config.toml, section: terminal, option: vt, value: 7 }

@@ -1,0 +1,9 @@
+- file:
+    dest: "{{ ansible_env.HOME }}/.config"
+    state: directory
+
+- file:
+    src: "{{ role_path }}/config/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
+    state: link
+  with_items: [ "{{ config }}" ]

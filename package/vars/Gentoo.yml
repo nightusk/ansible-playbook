@@ -1,7 +1,12 @@
 packages:
   - app-admin/sudo
+  - app-office/libreoffice-bin
   - app-portage/cpuid2cpuflags
   - app-portage/gentoolkit
+  - gui-apps/foot
+  - gui-apps/gtkgreet
+  - gui-libs/display-manager-init
+  - gui-wm/sway
   - net-firewall/firewalld
   - net-misc/chrony
   - net-misc/networkmanager
@@ -10,3 +15,7 @@ packages:
   - sys-kernel/gentoo-kernel-bin
   - sys-kernel/installkernel-gentoo
   - sys-kernel/linux-firmware
+  - www-client/chromium-bin
+  - www-client/firefox-bin
+  - x11-misc/dmenu
+  - x11-terms/alacritty

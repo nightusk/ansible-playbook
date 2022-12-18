@@ -3,3 +3,4 @@
     - { role: etc, tags: [ etc ] }
     - { role: package, tags: [ package ] }
     - { role: service, tags: [ service ] }
+    - { role: home, tags: [ home ] }

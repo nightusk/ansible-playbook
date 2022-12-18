@@ -1,5 +1,6 @@
 services:
   - NetworkManager
   - chronyd
+  - display-manager
   - firewalld
   - iwd

@@ -3,6 +3,8 @@ packages:
   - app-office/libreoffice-bin
   - app-portage/cpuid2cpuflags
   - app-portage/gentoolkit
+  - app-shells/nushell
+  - app-shells/starship
   - dev-util/github-cli
   - dev-vcs/git
   - gui-apps/foot
@@ -12,9 +14,12 @@ packages:
   - gui-libs/display-manager-init
   - gui-wm/sway
   - gui-wm/wayfire
+  - media-fonts/noto
+  - media-fonts/noto-emoji
   - net-firewall/firewalld
   - net-misc/chrony
   - net-misc/networkmanager
+  - sys-apps/bat
   - sys-boot/grub
   - sys-firmware/intel-microcode
   - sys-kernel/gentoo-kernel-bin

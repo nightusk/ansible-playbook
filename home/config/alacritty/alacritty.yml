@@ -1,0 +1,9 @@
+window:
+  decorations: none
+  opacity: 0.8
+
+shell:
+  program: /bin/bash
+  args:
+    - -c
+    - "zellij attach --index 0 --create"

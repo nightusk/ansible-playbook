@@ -1,0 +1,7 @@
+config:
+  - alacritty
+  - git
+  - nushell
+  - sway
+  - wayfire.ini
+  - zellij

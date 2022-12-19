@@ -1,9 +1,32 @@
+- include_vars: dotfiles.yml
+
+- lineinfile:
+    path: "{{ ansible_env.HOME }}/.profile"
+    line: "export {{ item.name }}={{ item.path }}"
+    insertbefore: export PATH
+    create: true
+  with_items: [ "{{ profile }}" ]
+
+- lineinfile:
+    path: "{{ ansible_env.HOME }}/.profile"
+    line: "export PATH=$PATH:{{ item }}"
+    create: true
+  with_items: [ "{{ path }}" ]
+
 - file:
-    dest: "{{ ansible_env.HOME }}/.config"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: directory
+  with_items:
+    - .config
+    - .local/share/fonts
 
 - file:
     src: "{{ role_path }}/config/{{ item }}"
     dest: "{{ ansible_env.HOME }}/.config/{{ item }}"
     state: link
   with_items: [ "{{ config }}" ]
+
+- get_url:
+    url: "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/{{ item.name }}/complete/{{ item.file | urlencode }}"
+    dest: "{{ ansible_env.HOME }}/.local/share/fonts/{{ item.file }}"
+  with_items: [ "{{ nerdfonts }}" ]

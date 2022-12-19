@@ -1,5 +1,8 @@
-config:
-  - alacritty
-  - git
-  - sway
-  - wayfire.ini
+nerdfonts:
+  - { name: Noto/Mono, file: Noto Mono Nerd Font Complete.ttf }
+
+profile:
+  - { name: CARGO_HOME, path: $HOME/.local/share/cargo }
+
+path:
+  - $CARGO_HOME/bin

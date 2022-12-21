@@ -1,7 +1,9 @@
 config:
   - alacritty
+  - emacs
   - git
   - nushell
+  - nvim
   - sway
   - wayfire.ini
   - zellij

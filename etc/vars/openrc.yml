@@ -10,6 +10,7 @@ etc_lines:
   - { path: /etc/greetd/sway-config, line: include /etc/sway/config.d/* }
   - { path: /etc/portage/package.license/ansible, line: sys-firmware/intel-microcode intel-ucode }
   - { path: /etc/portage/package.license/ansible, line: sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE }
+  - { path: /etc/portage/package.use/ansible, line: app-editors/emacs xft }
   - { path: /etc/portage/package.use/ansible, line: net-misc/networkmanager iwd }
   - { path: /etc/portage/package.use/ansible, line: sys-firmware/intel-microcode initramfs }
 

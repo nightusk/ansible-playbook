@@ -26,6 +26,11 @@
     state: link
   with_items: [ "{{ config }}" ]
 
+- file:
+    src: "{{ role_path }}/vim"
+    dest: "{{ ansible_env.HOME }}/.vim"
+    state: link
+
 - get_url:
     url: "https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/{{ item.name }}/complete/{{ item.file | urlencode }}"
     dest: "{{ ansible_env.HOME }}/.local/share/fonts/{{ item.file }}"

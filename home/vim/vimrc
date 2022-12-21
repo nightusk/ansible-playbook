@@ -1,0 +1,79 @@
+" vim: set foldmethod=marker:
+
+source $VIMRUNTIME/defaults.vim
+
+" 1 important{{{
+" }}}
+" 2 moving around, searching and patterns{{{
+set cdhome
+set nowrapscan
+set incsearch
+set ignorecase
+set smartcase
+" }}}
+" 3 tags{{{
+" }}}
+" 4 displaying text{{{
+set scrolloff=5
+set wrap
+set list
+set listchars+=tab:>-
+set listchars+=trail:-
+set listchars+=nbsp:+
+set number
+" }}}
+" 5 syntax, highlighting and spelling{{{
+set background=dark
+set cursorline
+" }}}
+" 6 multiple windows{{{
+set laststatus=2
+set hidden
+" }}}
+" 7 multiple tab pages{{{
+" }}}
+" 8 terminal{{{
+" }}}
+" 9 using the mouse{{{
+" }}}
+"10 printing{{{
+"}}}
+"11 messages and info{{{
+set showcmd
+"}}}
+"12 selecting text{{{
+"}}}
+"13 editing text{{{
+set showmatch
+set undodir=$HOME/.vim
+"}}}
+"14 tabs and indenting{{{
+"}}}
+"15 folding{{{
+"}}}
+"16 diff mode{{{
+"}}}
+"17 mapping{{{
+"}}}
+"18 reading and writing files{{{
+set autoread
+set modeline
+set backupdir=$HOME/.vim
+"}}}
+"19 the swap file{{{
+set directory=$HOME/.vim
+"}}}
+"20 command line editing{{{
+set wildmenu
+"}}}
+"21 executing external commands{{{
+"}}}
+"22 running make and jumping to errors (quickfix){{{
+"}}}
+"23 language specific{{{
+"}}}
+"24 multi-byte characters{{{
+"}}}
+"25 various{{{
+set viminfofile=~/.vim/viminfo
+"}}}

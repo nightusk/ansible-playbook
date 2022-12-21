@@ -1,0 +1,126 @@
+#+STARTUP: content
+
+* emacs init.el
+:PROPERTIES:
+:header-args: :results silent
+:END:
+
+** install leaf.el
+#+begin_src elisp
+  (eval-and-compile
+    (customize-set-variable
+     'package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("org" . "https://orgmode.org/elpa/")))
+    (package-initialize)
+    (unless (package-installed-p 'leaf)
+      (package-refresh-contents)
+      (package-install 'leaf))
+    (leaf leaf-keywords
+          :ensure t
+          :config
+          (leaf-keywords-init)))
+#+end_src
+
+** builtin configuration
+*** essentials
+#+begin_src elisp
+  (defalias 'yes-or-no-p 'y-or-n-p)
+  (keyboard-translate ?\C-h ?\C-?)
+  (load-theme (if window-system 'modus-operandi 'modus-vivendi))
+#+end_src
+
+*** C source
+#+begin_src elisp :results none
+  (leaf cus-start
+    :custom
+    (menu-bar-mode . nil)
+    (tool-bar-mode . nil)
+    )
+#+end_src
+
+*** autorevert
+#+begin_src elisp
+  (leaf autorevert
+    :custom
+    (auto-revert-interval . 1)
+    (global-auto-revert-mode . t)
+    )
+#+end_src
+
+*** elec-pair
+#+begin_src elisp
+  (leaf elec-pair
+    :custom
+    (electric-pair-mode . t)
+    )
+#+end_src
+
+*** files
+#+begin_src elisp
+  (leaf files
+    :custom
+    (auto-save-interval . 60)
+    (auto-save-timeout . 15)
+    (delete-old-versions . t)
+    `(auto-save-file-name-transforms . '((".*" ,(locate-user-emacs-file "backup/") t)))
+    `(backup-directory-alist . '((".*" . ,(locate-user-emacs-file "backup"))
+                                 (,tramp-file-name-regexp . nil)))
+    (version-control . t)
+    )
+#+end_src
+
+*** scroll-bar
+#+begin_src elisp
+  (leaf scroll-bar
+    :custom
+    (scroll-bar-mode . nil)
+    )
+#+end_src
+
+*** simple
+#+begin_src elisp
+  (leaf simple
+    :custom
+    (column-number-mode . t)
+    )
+#+end_src
+
+*** startup
+#+begin_src elisp
+    (leaf startup
+      :custom
+      `(auto-save-list-file-prefix . ,(locate-user-emacs-file "backup/.saves-"))
+      )
+#+end_src
+
+*** whitespace
+#+begin_src elisp
+  (leaf whitespace
+    :custom
+    (global-whitespace-mode . t)
+    )
+#+end_src
+
+** global-minor-modes
+*** editorconfig
+#+begin_src elisp
+  (leaf editorconfig
+    :ensure t
+    :global-minor-mode t)
+#+end_src
+
+** major-modes
+*** org-mode
+#+begin_src elisp
+  (leaf ob-core
+    :custom
+    (org-confirm-babel-evaluate . nil)
+    )
+#+end_src
+
+* Local Variables :noexport:
+Local Variables:
+indent-tabs-mode: nil
+End:

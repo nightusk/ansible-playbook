@@ -1,5 +1,9 @@
 packages:
   - app-admin/sudo
+  - app-editors/emacs
+  - app-editors/gvim
+  - app-editors/neovim
+  - app-editors/vim
   - app-office/libreoffice-bin
   - app-portage/cpuid2cpuflags
   - app-portage/gentoolkit

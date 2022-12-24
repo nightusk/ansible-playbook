@@ -7,6 +7,7 @@ packages:
   - app-office/libreoffice-bin
   - app-portage/cpuid2cpuflags
   - app-portage/gentoolkit
+  - app-shells/fish
   - app-shells/nushell
   - app-shells/starship
   - dev-util/github-cli
@@ -33,3 +34,4 @@ packages:
   - www-client/firefox-bin
   - x11-misc/dmenu
   - x11-terms/alacritty
+  - x11-terms/kitty

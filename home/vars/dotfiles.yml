@@ -1,7 +1,9 @@
 config:
   - alacritty
   - emacs
+  - fish
   - git
+  - kitty
   - nushell
   - nvim
   - sway

@@ -1,4 +1,11 @@
-- include_vars: "{{ ansible_service_mgr }}.yml"
+- include_vars: "{{ lookup('first_found', params) }}"
+  vars:
+    params:
+      files:
+        - "{{ ansible_service_mgr }}_{{ ansible_distribution }}.yml"
+        - "{{ ansible_service_mgr }}.yml"
+      paths:
+        - "vars"
 
 - lineinfile:
     path: "{{ item.path }}"

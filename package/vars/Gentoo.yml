@@ -10,6 +10,7 @@ packages:
   - app-shells/fish
   - app-shells/nushell
   - app-shells/starship
+  - dev-python/python-lsp-server
   - dev-util/github-cli
   - dev-vcs/git
   - gui-apps/foot
@@ -26,6 +27,7 @@ packages:
   - net-misc/networkmanager
   - sys-apps/bat
   - sys-boot/grub
+  - sys-devel/clang-common
   - sys-firmware/intel-microcode
   - sys-kernel/gentoo-kernel-bin
   - sys-kernel/installkernel-gentoo

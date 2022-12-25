@@ -11,7 +11,9 @@ etc_lines:
   - { path: /etc/portage/package.license/ansible, line: sys-firmware/intel-microcode intel-ucode }
   - { path: /etc/portage/package.license/ansible, line: sys-kernel/linux-firmware @BINARY-REDISTRIBUTABLE }
   - { path: /etc/portage/package.use/ansible, line: app-editors/emacs xft }
+  - { path: /etc/portage/package.use/ansible, line: dev-python/python-lsp-server all-plugins }
   - { path: /etc/portage/package.use/ansible, line: net-misc/networkmanager iwd }
+  - { path: /etc/portage/package.use/ansible, line: sys-devel/clang-common default-lld }
   - { path: /etc/portage/package.use/ansible, line: sys-firmware/intel-microcode initramfs }
 
 etc_inis:

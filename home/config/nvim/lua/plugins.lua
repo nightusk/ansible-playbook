@@ -20,6 +20,13 @@ local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/vim-vsnip'
+  use 'neovim/nvim-lspconfig'
   use 'wbthomason/packer.nvim'
   if packer_bootstrap then
     require('packer').sync()

@@ -104,11 +104,25 @@
 #+end_src
 
 ** global-minor-modes
+*** company-mode
+#+begin_src elisp
+  (leaf company
+    :ensure t
+    :global-minor-mode global-company-mode)
+#+end_src
+
 *** editorconfig
 #+begin_src elisp
   (leaf editorconfig
     :ensure t
     :global-minor-mode t)
+#+end_src
+
+*** yasnippet
+#+begin_src elisp
+  (leaf yasnippet
+    :ensure t
+    :global-minor-mode yas-global-mode)
 #+end_src
 
 ** major-modes
@@ -118,6 +132,19 @@
     :custom
     (org-confirm-babel-evaluate . nil)
     )
+#+end_src
+
+** utilities
+*** eglot
+#+begin_src elisp
+    (leaf eglot
+      :ensure t
+      :hook
+      ((
+        c++-mode-hook
+        c-mode-hook
+        python-mode-hook
+        ) . eglot-ensure))
 #+end_src
 
 * Local Variables :noexport:

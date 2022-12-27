@@ -61,12 +61,14 @@
 #+begin_src elisp
   (leaf files
     :custom
+    (auto-save-file-name-transforms
+     . `((".*" ,(locate-user-emacs-file "backup/") t)))
     (auto-save-interval . 60)
     (auto-save-timeout . 15)
+    (backup-directory-alist
+     . `((".*" . ,(locate-user-emacs-file "backup"))
+         (,tramp-file-name-regexp . nil)))
     (delete-old-versions . t)
-    `(auto-save-file-name-transforms . '((".*" ,(locate-user-emacs-file "backup/") t)))
-    `(backup-directory-alist . '((".*" . ,(locate-user-emacs-file "backup"))
-                                 (,tramp-file-name-regexp . nil)))
     (version-control . t)
     )
 #+end_src

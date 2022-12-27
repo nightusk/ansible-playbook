@@ -1,8 +1,9 @@
-all: init.elc
+all: init.el init.elc
 
-%.elc: %.org
-	emacs --batch --quick --eval "(progn (require 'org) (org-babel-load-file \"$<\"))"
-	emacs --batch -f batch-byte-compile $(subst elc,el,$@)
-	rm $(subst elc,el,$@)
+%.el: %.org
+	emacs --batch --quick --load org --eval '(org-babel-load-file "$<")'
+
+%.elc: %.el
+	emacs --batch --quick --funcall batch-byte-compile $<
 
 .PHONY: all

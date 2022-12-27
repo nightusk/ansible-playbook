@@ -91,10 +91,11 @@
 
 *** startup
 #+begin_src elisp
-    (leaf startup
-      :custom
-      `(auto-save-list-file-prefix . ,(locate-user-emacs-file "backup/.saves-"))
-      )
+  (leaf startup
+    :custom
+    `(auto-save-list-file-prefix . ,(locate-user-emacs-file "backup/.saves-"))
+    (inhibit-startup-screen . t)
+    )
 #+end_src
 
 *** whitespace

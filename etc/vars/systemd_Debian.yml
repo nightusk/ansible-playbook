@@ -1,7 +1,9 @@
 etc_lines:
+  - { path: /etc/apt/apt.conf.d/99target, line: APT::Default-Release "testing"; }
   - { path: /etc/apt/sources.list, line: deb http://deb.debian.org/debian testing main }
   - { path: /etc/apt/sources.list, line: deb http://deb.debian.org/debian testing-updates main }
   - { path: /etc/apt/sources.list, line: deb http://security.debian.org/debian-security testing-security main }
   - { path: /etc/apt/sources.list, line: deb http://ftp.debian.org/debian testing-backports main }
+  - { path: /etc/apt/sources.list, line: deb http://deb.debian.org/debian unstable main }
 
 etc_inis: []

@@ -26,6 +26,9 @@
     state: link
   with_items: [ "{{ config }}" ]
 
+- make:
+    chdir: "{{ role_path }}/config/emacs"
+
 - file:
     src: "{{ role_path }}/vim"
     dest: "{{ ansible_env.HOME }}/.vim"

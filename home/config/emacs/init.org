@@ -28,7 +28,6 @@
 #+begin_src elisp
   (defalias 'yes-or-no-p 'y-or-n-p)
   (keyboard-translate ?\C-h ?\C-?)
-  (load-theme (if window-system 'modus-operandi 'modus-vivendi))
 #+end_src
 
 *** C source
@@ -46,6 +45,14 @@
     :custom
     (auto-revert-interval . 1)
     (global-auto-revert-mode . t)
+    )
+#+end_src
+
+*** custom
+#+begin_src elisp
+  (leaf custom
+    :init
+    (load-theme (if window-system 'modus-operandi 'modus-vivendi))
     )
 #+end_src
 

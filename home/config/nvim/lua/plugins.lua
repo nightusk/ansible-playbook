@@ -97,6 +97,9 @@ return require('packer').startup(function(use)
       end
     end
   } -- }}}
+  use { 'nvim-telescope/telescope.nvim', -- {{{
+    requires = { {'nvim-lua/plenary.nvim'} }
+  } -- }}}
   use 'wbthomason/packer.nvim'
   if packer_bootstrap then
     require('packer').sync()

@@ -23,6 +23,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-vsnip'
@@ -47,6 +48,20 @@ return require('packer').startup(function(use)
           { name = 'vsnip' },
         }, {
           { name = 'buffer' },
+        })
+      }) -- }}}
+      cmp.setup.cmdline({'/', '?'}, { -- {{{
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      }) -- }}}
+      cmp.setup.cmdline(':', { -- {{{
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' }
+        }, {
+          { name = 'cmdline' }
         })
       }) -- }}}
     end
@@ -86,7 +101,9 @@ return require('packer').startup(function(use)
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
       for _, server in ipairs({
+        'ansiblels',
         'clangd',
+        'millet',
         'pylsp',
       })
       do
@@ -96,9 +113,6 @@ return require('packer').startup(function(use)
         }
       end
     end
-  } -- }}}
-  use { 'nvim-telescope/telescope.nvim', -- {{{
-    requires = { {'nvim-lua/plenary.nvim'} }
   } -- }}}
   use 'wbthomason/packer.nvim'
   if packer_bootstrap then

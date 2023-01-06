@@ -141,7 +141,7 @@
     (org-agenda-finalize-hook . org-modern-agenda))
 #+end_src
 
-* Local Variables :noexport:
+* COMMENT Local Variables
 Local Variables:
 indent-tabs-mode: nil
 End:

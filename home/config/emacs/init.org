@@ -24,101 +24,43 @@
 #+end_src
 
 ** builtin configuration
-*** essentials
+*** preference
 #+begin_src elisp
   (defalias 'yes-or-no-p 'y-or-n-p)
   (keyboard-translate ?\C-h ?\C-?)
 #+end_src
 
-*** C source
-#+begin_src elisp :results none
-  (leaf cus-start
-    :custom
-    (menu-bar-mode . nil)
-    (tool-bar-mode . nil)
-    )
+*** appearance
+#+begin_src elisp
+  (column-number-mode +1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (load-theme (if window-system 'modus-operandi 'modus-vivendi))
 #+end_src
 
-*** autorevert
+*** global-minor-modes
 #+begin_src elisp
-  (leaf autorevert
-    :custom
-    (auto-revert-interval . 1)
-    (global-auto-revert-mode . t)
-    )
+  (electric-pair-mode +1)
+  (global-auto-revert-mode +1)
+  (global-whitespace-mode +1)
 #+end_src
 
-*** custom
+*** customize
 #+begin_src elisp
-  (leaf custom
-    :init
-    (load-theme (if window-system 'modus-operandi 'modus-vivendi))
-    )
-#+end_src
-
-*** elec-pair
-#+begin_src elisp
-  (leaf elec-pair
-    :custom
-    (electric-pair-mode . t)
-    )
-#+end_src
-
-*** files
-#+begin_src elisp
-  (leaf files
-    :custom
-    (auto-save-file-name-transforms
-     . `((".*" ,(locate-user-emacs-file "backup/") t)))
-    (auto-save-interval . 60)
-    (auto-save-timeout . 15)
-    (backup-directory-alist
-     . `((".*" . ,(locate-user-emacs-file "backup"))
-         (,tramp-file-name-regexp . nil)))
-    (delete-old-versions . t)
-    (version-control . t)
-    )
-#+end_src
-
-*** org-mode
-#+begin_src elisp
-  (leaf ob-core
-    :custom
-    (org-confirm-babel-evaluate . nil)
-    )
-#+end_src
-
-*** scroll-bar
-#+begin_src elisp
-  (leaf scroll-bar
-    :custom
-    (scroll-bar-mode . nil)
-    )
-#+end_src
-
-*** simple
-#+begin_src elisp
-  (leaf simple
-    :custom
-    (column-number-mode . t)
-    )
-#+end_src
-
-*** startup
-#+begin_src elisp
-  (leaf startup
-    :custom
-    `(auto-save-list-file-prefix . ,(locate-user-emacs-file "backup/.saves-"))
-    (inhibit-startup-screen . t)
-    )
-#+end_src
-
-*** whitespace
-#+begin_src elisp
-  (leaf whitespace
-    :custom
-    (global-whitespace-mode . t)
-    )
+  (custom-set-variables
+   '(auto-save-file-name-transforms
+     `((".*" ,(locate-user-emacs-file "backup/") t)))
+   '(auto-save-list-file-prefix
+     `,(locate-user-emacs-file "backup/.saves-"))
+   '(backup-directory-alist
+     `((".*" . ,(locate-user-emacs-file "backup"))
+       (,tramp-file-name-regexp . nil)))
+   '(delete-old-versions t)
+   '(inhibit-startup-screen t)
+   '(org-confirm-babel-evaluate nil)
+   '(version-control t)
+   )
 #+end_src
 
 ** packages

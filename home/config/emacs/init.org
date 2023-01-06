@@ -80,6 +80,14 @@
     )
 #+end_src
 
+*** org-mode
+#+begin_src elisp
+  (leaf ob-core
+    :custom
+    (org-confirm-babel-evaluate . nil)
+    )
+#+end_src
+
 *** scroll-bar
 #+begin_src elisp
   (leaf scroll-bar
@@ -113,8 +121,9 @@
     )
 #+end_src
 
-** global-minor-modes
+** packages
 *** company-mode
+**** company-mode
 #+begin_src elisp
   (leaf company
     :ensure t
@@ -122,30 +131,15 @@
 #+end_src
 
 *** editorconfig
+**** editorconfig-emacs
 #+begin_src elisp
   (leaf editorconfig
     :ensure t
     :global-minor-mode t)
 #+end_src
 
-*** yasnippet
-#+begin_src elisp
-  (leaf yasnippet
-    :ensure t
-    :global-minor-mode yas-global-mode)
-#+end_src
-
-** major-modes
-*** org-mode
-#+begin_src elisp
-  (leaf ob-core
-    :custom
-    (org-confirm-babel-evaluate . nil)
-    )
-#+end_src
-
-** utilities
-*** eglot
+*** joaotavora
+**** eglot
 #+begin_src elisp
     (leaf eglot
       :ensure t
@@ -155,6 +149,13 @@
         c-mode-hook
         python-mode-hook
         ) . eglot-ensure))
+#+end_src
+
+**** yasnippet
+#+begin_src elisp
+  (leaf yasnippet
+    :ensure t
+    :global-minor-mode yas-global-mode)
 #+end_src
 
 * Local Variables :noexport:

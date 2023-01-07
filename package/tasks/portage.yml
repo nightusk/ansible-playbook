@@ -1,0 +1,9 @@
+- portage:
+    sync: true
+  become: true
+
+- portage:
+    name: "{{ item }}"
+  with_items: [ "{{ packages }}" ]
+  become: true
+  ignore_errors: true

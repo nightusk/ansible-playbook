@@ -1,0 +1,8 @@
+- apt:
+    update_cache: true
+  become: true
+
+- apt:
+    name: "{{ packages }}" 
+  become: true
+  ignore_errors: true

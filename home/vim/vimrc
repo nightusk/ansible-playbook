@@ -75,5 +75,5 @@ set wildmenu
 "24 multi-byte characters{{{
 "}}}
 "25 various{{{
-set viminfofile=~/.vim/viminfo
+set viminfofile=$HOME/.vim/viminfo
 "}}}

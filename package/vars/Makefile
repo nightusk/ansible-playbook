@@ -1,4 +1,4 @@
-Debian.yml:
+Debian.yml Ubuntu.yml:
 	apt-mark showmanual | sed -r \
 		-e "/^lib/d" \
 		-e "/^apt(-.+)?$$/d" \
@@ -15,6 +15,8 @@ Debian.yml:
 		-e "/^readline(-.+)?$$/d" \
 		-e "/^sensible(-.+)?$$/d" \
 		-e "/^sysvinit(-.+)?$$/d" \
+		-e "/^tasksel(-.+)?$$/d" \
+		-e "/^ubuntu(-.+)?$$/d" \
 		-e "/^vim(-.+)?$$/d" \
 		-e "s/^/  - /" \
 		-e "1ipackages:" > $@

@@ -2,7 +2,7 @@
 
 * emacs init.el
 :PROPERTIES:
-:header-args: :results silent
+:header-args: :results silent :tangle yes
 :END:
 
 ** install leaf.el
@@ -36,16 +36,19 @@
   (menu-bar-mode -1)
   (scroll-bar-mode -1)
   (tool-bar-mode -1)
-  (load-theme (if window-system 'modus-operandi 'modus-vivendi))
+  (ignore-errors
+    (load-theme (if window-system 'modus-operandi 'modus-vivendi)))
 #+end_src
 
 *** global-minor-modes
 #+begin_src elisp
   (electric-pair-mode +1)
-  (fido-vertical-mode +1)
   (global-auto-revert-mode +1)
   (global-whitespace-mode +1)
   (savehist-mode +1)
+  (show-paren-mode +1)
+  (ignore-errors
+    (fido-vertical-mode +1))
 #+end_src
 
 *** customize
@@ -129,7 +132,7 @@
 #+begin_src elisp
   (leaf marginalia
     :ensure t
-    :global-minor-mode marginalia-mode)
+    :global-minor-mode t)
 #+end_src
 
 **** org-modern
@@ -138,7 +141,16 @@
     :ensure t
     :hook
     (org-mode-hook . org-modern-mode)
-    (org-agenda-finalize-hook . org-modern-agenda))
+    (org-agenda-finalize-hook . org-modern-agenda)
+    )
+#+end_src
+
+**** vertico
+#+begin_src elisp
+  (leaf vertico
+    :ensure t
+    :emacs< "28.0"
+    :global-minor-mode t)
 #+end_src
 
 * COMMENT Local Variables
